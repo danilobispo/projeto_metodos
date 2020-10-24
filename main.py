@@ -89,14 +89,16 @@ if __name__ == '__main__':
     bullied_data = readBulliedStats(dataset)
     witness_data = readWitnessStats(dataset)
     referents_data = readReferentsStats(dataset)
+    aspectoSSP = "Mistrust"
+    aspectoJCQ = "Support from managers"
 
-    [bullied_samples_x, bullied_samples_y] = createSamplesForEachGroup(n=n_bullied, dataset=bullied_data, index_row1="Somatic trait anxiety",
-                                                index_row2="Total job control score")
-    [witness_samples_x, witness_samples_y] = createSamplesForEachGroup(n=n_witness, dataset=witness_data, index_row1="Somatic trait anxiety",
-                                                index_row2="Total job control score")
+    [bullied_samples_x, bullied_samples_y] = createSamplesForEachGroup(n=n_bullied, dataset=bullied_data, index_row1=aspectoSSP,
+                                                index_row2=aspectoJCQ)
+    [witness_samples_x, witness_samples_y] = createSamplesForEachGroup(n=n_witness, dataset=witness_data, index_row1=aspectoSSP,
+                                                index_row2=aspectoJCQ)
     [referents_samples_x, referents_samples_y] = createSamplesForEachGroup(n=n_referents, dataset=referents_data,
-                                                  index_row1="Somatic trait anxiety",
-                                                  index_row2="Total job control score")
+                                                  index_row1=aspectoSSP,
+                                                  index_row2=aspectoJCQ)
 
     print("Bullied Samples x: ", bullied_samples_x)
     print("Bullied Samples y: ", bullied_samples_y)
@@ -107,9 +109,9 @@ if __name__ == '__main__':
 
 
     ax = plt.subplots(1, 1)
-    ax = sns.scatterplot(x=bullied_samples_x, y=bullied_samples_y, color='red')
-    ax = sns.scatterplot(x=witness_samples_x, y=witness_samples_y, color='blue')
-    ax = sns.scatterplot(x=referents_samples_x, y=referents_samples_y, color='green')
+    ax = sns.scatterplot(x=bullied_samples_x, y=bullied_samples_y, color='red', alpha=0.5)
+    ax = sns.scatterplot(x=witness_samples_x, y=witness_samples_y, color='blue', alpha=0.5)
+    ax = sns.scatterplot(x=referents_samples_x, y=referents_samples_y, color='green', alpha=0.5)
     ax.plot()
     plt.show()
 

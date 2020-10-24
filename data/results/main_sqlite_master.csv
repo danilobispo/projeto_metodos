@@ -1,0 +1,15 @@
+table,Answer,Answer,2,"CREATE TABLE ""Answer"" (
+	""AnswerText"" VARCHAR(10000) NULL,
+	""SurveyID"" INTEGER NULL,
+	""UserID"" INTEGER NULL,
+	""QuestionID"" INTEGER NULL
+)"
+table,Question,Question,1434,"CREATE TABLE ""Question"" (
+	""questiontext"" VARCHAR(1000) NULL,
+	""questionid"" INTEGER NULL
+)"
+table,Survey,Survey,1438,"CREATE TABLE ""Survey"" (
+	""SurveyID"" INTEGER NOT NULL,
+	""Description"" VARCHAR(255) NULL,
+	PRIMARY KEY (""SurveyID"")
+)"
