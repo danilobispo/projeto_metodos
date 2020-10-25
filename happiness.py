@@ -27,7 +27,7 @@ if __name__ == '__main__':
     plt.ylabel('GDP per capita')
     fig = plt.gcf()
     #fig.set_size_inches(4, 12)
-
+    plt.savefig("data/results/happiness/HappinessVsGDPWithLegend.png", bbox_inches="tight")
     plt.show()
 
     # scaling values for elbow method
@@ -45,7 +45,9 @@ if __name__ == '__main__':
     plt.title('Elbow Method')
     plt.xlabel('Number of clusters')
     plt.ylabel('WCSS')
+    plt.savefig("data/results/happiness/ElbowMethod.png")
     plt.show()
+
 
     kmeans = KMeans(n_clusters=3, init='k-means++', max_iter=300, n_init=10, random_state=0)
     pred_y = kmeans.fit_predict(gdpByHappiness[['Happiness Score', 'Economy (GDP per Capita)']])
@@ -55,7 +57,10 @@ if __name__ == '__main__':
     plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.xlabel('Happiness Score')
     plt.ylabel('GDP per capita')
+    plt.savefig("data/results/happiness/HappinessVsGDPPerCapitaWithClusters.png")
     plt.show()
+
+
 
 
 
