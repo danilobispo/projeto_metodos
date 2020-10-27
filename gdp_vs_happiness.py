@@ -44,7 +44,7 @@ def Kmeans_Country_HappinessvGDP(dataset):
     plt.title('Elbow Method')
     plt.xlabel('Number of clusters')
     plt.ylabel('WCSS')
-    plt.savefig("data/results/happiness/ElbowMethod.png")
+    plt.savefig("data/results/happiness/ElbowMethod.png", bbox_inches="tight")
     plt.show()
 
     # As seen in the previous plot, the ideal number of clusters is 3
@@ -56,7 +56,7 @@ def Kmeans_Country_HappinessvGDP(dataset):
     plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.xlabel('Happiness Score')
     plt.ylabel('GDP per capita')
-    plt.savefig("data/results/happiness/HappinessVsGDPPerCapitaWithClusters.png")
+    plt.savefig("data/results/happiness/HappinessVsGDPPerCapitaWithClusters.png", bbox_inches="tight")
     plt.show()
 
 
@@ -108,7 +108,7 @@ def KMeans_Region_HappinessvGDP(df):
     plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.xlabel('Happiness Score')
     plt.ylabel('GDP per capita')
-    plt.savefig("data/results/happiness/HappinessVsGDPPerCapitaWithClusters.png")
+    plt.savefig("data/results/happiness/HappinessVsGDPPerCapitaWithClusters.png", bbox_inches="tight")
     plt.show()
 
 

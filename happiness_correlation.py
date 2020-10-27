@@ -17,11 +17,11 @@ if __name__ == '__main__':
     mask = np.triu(np.ones_like(correlation_matrix))
     heatmap = sns.heatmap(correlation_matrix, annot=True, vmin=-1, vmax=1, cmap='BrBG', mask=mask)
     heatmap.set_title('Correlation Heatmap', fontdict={'fontsize': 12}, pad=12)
-    plt.savefig('data/results/happiness/CorrelationMatrix.png')
+    plt.savefig('data/results/happiness/CorrelationMatrix.png', bbox_inches = 'tight')
     plt.show()
 
     heatmap = sns.heatmap(happiness_iv, vmin=-1,
                           vmax=1, annot=True, cmap='BrBG')
     heatmap.set_title('Features correlating with Happiness Score',  fontdict={'fontsize': 12}, pad=12)
-    plt.savefig('data/results/happiness/FeaturesCorrelatingHappiness.png')
+    plt.savefig('data/results/happiness/FeaturesCorrelatingHappiness.png', bbox_inches = 'tight')
     plt.show()
